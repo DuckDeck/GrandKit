@@ -74,6 +74,14 @@
 		AE1B2DA626EF330700F8C5D9 /* GrandContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GrandContentViewController.swift */; };
 		AE1B2DA726EF330700F8C5D9 /* GrandBaseTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* GrandBaseTable.swift */; };
 		AE1B2DA826EF330700F8C5D9 /* GrandMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* GrandMenu.swift */; };
+		AE1B2DAD26EF343F00F8C5D9 /* GrandTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAA26EF343F00F8C5D9 /* GrandTimer.swift */; };
+		AE1B2DAE26EF343F00F8C5D9 /* GrandTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAA26EF343F00F8C5D9 /* GrandTimer.swift */; };
+		AE1B2DAF26EF343F00F8C5D9 /* GrandTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAB26EF343F00F8C5D9 /* GrandTime.swift */; };
+		AE1B2DB026EF343F00F8C5D9 /* GrandTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAB26EF343F00F8C5D9 /* GrandTime.swift */; };
+		AE1B2DB126EF343F00F8C5D9 /* TimeSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */; };
+		AE1B2DB226EF343F00F8C5D9 /* TimeSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */; };
+		AE1B2DB526EF34B600F8C5D9 /* StarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */; };
+		AE1B2DB626EF34B600F8C5D9 /* StarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */; };
 		OBJ_28 /* GrandBaseTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* GrandBaseTable.swift */; };
 		OBJ_29 /* GrandCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* GrandCellTableViewCell.swift */; };
 		OBJ_30 /* GrandContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GrandContentViewController.swift */; };
@@ -138,6 +146,10 @@
 		AE1B2D8126EF32D700F8C5D9 /* MarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkView.swift; sourceTree = "<group>"; };
 		AE1B2D8226EF32D700F8C5D9 /* MarkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkInfo.swift; sourceTree = "<group>"; };
 		AE1B2D8326EF32D700F8C5D9 /* ShakeEnableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeEnableCell.swift; sourceTree = "<group>"; };
+		AE1B2DAA26EF343F00F8C5D9 /* GrandTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandTimer.swift; sourceTree = "<group>"; };
+		AE1B2DAB26EF343F00F8C5D9 /* GrandTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandTime.swift; sourceTree = "<group>"; };
+		AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpan.swift; sourceTree = "<group>"; };
+		AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarReview.swift; sourceTree = "<group>"; };
 		"GrandKit::GrandKit::Product" /* GrandKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GrandKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"GrandKit::GrandKitTests::Product" /* GrandKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = GrandKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* GrandCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +259,24 @@
 			path = ViewChaos;
 			sourceTree = "<group>";
 		};
+		AE1B2DA926EF343500F8C5D9 /* GrandTime */ = {
+			isa = PBXGroup;
+			children = (
+				AE1B2DAB26EF343F00F8C5D9 /* GrandTime.swift */,
+				AE1B2DAA26EF343F00F8C5D9 /* GrandTimer.swift */,
+				AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */,
+			);
+			path = GrandTime;
+			sourceTree = "<group>";
+		};
+		AE1B2DB326EF34A400F8C5D9 /* StarReview */ = {
+			isa = PBXGroup;
+			children = (
+				AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */,
+			);
+			path = StarReview;
+			sourceTree = "<group>";
+		};
 		OBJ_16 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +320,8 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AE1B2DB326EF34A400F8C5D9 /* StarReview */,
+				AE1B2DA926EF343500F8C5D9 /* GrandTime */,
 				AE1B2D7926EF32CB00F8C5D9 /* ViewChaos */,
 				AE1B2D7426EF329500F8C5D9 /* GrandStore */,
 				AE1B2D5B26EF30FF00F8C5D9 /* GrandRefresh */,
@@ -439,12 +471,15 @@
 			files = (
 				AE1B2DA426EF330700F8C5D9 /* GrandCellTableViewCell.swift in Sources */,
 				AE1B2D3226EF30AD00F8C5D9 /* ViewController.swift in Sources */,
+				AE1B2DB026EF343F00F8C5D9 /* GrandTime.swift in Sources */,
+				AE1B2DAE26EF343F00F8C5D9 /* GrandTimer.swift in Sources */,
 				AE1B2D9326EF32F700F8C5D9 /* ZoomView.swift in Sources */,
 				AE1B2DA626EF330700F8C5D9 /* GrandContentViewController.swift in Sources */,
 				AE1B2D2E26EF30AD00F8C5D9 /* AppDelegate.swift in Sources */,
 				AE1B2DA226EF330700F8C5D9 /* GrandMenuItem.swift in Sources */,
 				AE1B2D9B26EF330300F8C5D9 /* RefreshComponent.swift in Sources */,
 				AE1B2D9C26EF330300F8C5D9 /* DefaultRefreshHeader.swift in Sources */,
+				AE1B2DB226EF343F00F8C5D9 /* TimeSpan.swift in Sources */,
 				AE1B2D9026EF32F400F8C5D9 /* MarkInfo.swift in Sources */,
 				AE1B2D9226EF32F700F8C5D9 /* ShakeEnableCell.swift in Sources */,
 				AE1B2DA326EF330700F8C5D9 /* GrandMenuTable.swift in Sources */,
@@ -465,6 +500,7 @@
 				AE1B2D9126EF32F700F8C5D9 /* ViewNeat.swift in Sources */,
 				AE1B2D3026EF30AD00F8C5D9 /* SceneDelegate.swift in Sources */,
 				AE1B2D9E26EF330300F8C5D9 /* LoadMoreFooter.swift in Sources */,
+				AE1B2DB626EF34B600F8C5D9 /* StarReview.swift in Sources */,
 				AE1B2D9626EF32F700F8C5D9 /* MarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,9 +516,11 @@
 				AE1B2D7026EF328A00F8C5D9 /* LoadMoreFooter.swift in Sources */,
 				OBJ_28 /* GrandBaseTable.swift in Sources */,
 				OBJ_29 /* GrandCellTableViewCell.swift in Sources */,
+				AE1B2DB526EF34B600F8C5D9 /* StarReview.swift in Sources */,
 				AE1B2D7726EF32AE00F8C5D9 /* GrandStore.swift in Sources */,
 				OBJ_30 /* GrandContentViewController.swift in Sources */,
 				AE1B2D8A26EF32D700F8C5D9 /* ZoomView.swift in Sources */,
+				AE1B2DB126EF343F00F8C5D9 /* TimeSpan.swift in Sources */,
 				AE1B2D8926EF32D700F8C5D9 /* ViewNeat.swift in Sources */,
 				AE1B2D7226EF328A00F8C5D9 /* RefreshStyle.swift in Sources */,
 				AE1B2D7326EF328A00F8C5D9 /* RefreshComponent.swift in Sources */,
@@ -496,7 +534,9 @@
 				OBJ_33 /* GrandMenuTable.swift in Sources */,
 				AE1B2D8526EF32D700F8C5D9 /* Tool.swift in Sources */,
 				AE1B2D8626EF32D700F8C5D9 /* LogView.swift in Sources */,
+				AE1B2DAD26EF343F00F8C5D9 /* GrandTimer.swift in Sources */,
 				AE1B2D6E26EF328A00F8C5D9 /* RefreshHeader.swift in Sources */,
+				AE1B2DAF26EF343F00F8C5D9 /* GrandTime.swift in Sources */,
 				OBJ_34 /* GrandPageContentView.swift in Sources */,
 				AE1B2D8B26EF32D700F8C5D9 /* MarkView.swift in Sources */,
 			);
