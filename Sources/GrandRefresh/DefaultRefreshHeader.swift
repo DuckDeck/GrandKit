@@ -28,8 +28,8 @@ public class DefaultRefreshHeader: RefreshHeader, SubRefreshHeaderProtocol {
     
     lazy var pullingIndicator: UIImageView = {
         let pindicator = UIImageView()
-        pindicator.image = UIImage(named: "arrow_down", in: Bundle(for: RefreshHeader.self), compatibleWith: nil)
-        
+        let bundle = Bundle(path: Bundle(for: LoadMoreFooter.self).path(forResource: "Refresh", ofType: "bundle")!)
+        pindicator.image = UIImage(contentsOfFile: (bundle?.path(forResource: "arrow_down@3x", ofType: "png"))!)?.withRenderingMode(.alwaysTemplate)
         return pindicator
     }()
     
@@ -141,14 +141,17 @@ public class DefaultRefreshHeader: RefreshHeader, SubRefreshHeaderProtocol {
             if let img = self.sucImage {
                 pullingIndicator.image = img
             } else {
-                pullingIndicator.image = UIImage(named: "success", in: Bundle(for: DefaultRefreshHeader.self), compatibleWith: nil)
+                let bundle = Bundle(path: Bundle(for: LoadMoreFooter.self).path(forResource: "Refresh", ofType: "bundle")!)
+                pullingIndicator.image = UIImage(contentsOfFile: (bundle?.path(forResource: "success@3x", ofType: "png"))!)?.withRenderingMode(.alwaysTemplate)
+
             }
         } else {
             messageLabel.text =  self.refreshFailure
             if let img = self.failImage {
                 pullingIndicator.image = img
             } else {
-                pullingIndicator.image = UIImage(named: "failure", in: Bundle(for: DefaultRefreshHeader.self), compatibleWith: nil)
+                let bundle = Bundle(path: Bundle(for: LoadMoreFooter.self).path(forResource: "Refresh", ofType: "bundle")!)
+                pullingIndicator.image = UIImage(contentsOfFile: (bundle?.path(forResource: "failure@3x", ofType: "png"))!)?.withRenderingMode(.alwaysTemplate)
             }
         }
     }

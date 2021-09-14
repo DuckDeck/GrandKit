@@ -1,0 +1,19 @@
+pullDownToRefresh = "下拉可以刷新";
+
+releaseToRefresh = "鬆開立即使刷新";
+
+refreshSuccess = "更新成功";
+
+refreshFailure = "更新失敗";
+
+refreshing = "刷新中...";
+
+pullUpToRefresh = "上拉可以加載更多";
+
+noMoreData = "已加載所有數據";
+
+tapToRefresh = "點擊刷新";
+
+loadMore = "加載中...";
+
+releaseLoadMore = "鬆開立即加載莄多";

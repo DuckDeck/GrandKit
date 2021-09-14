@@ -93,7 +93,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "Sources", "Sources/**/*"
   spec.vendored_frameworks = "Sources/GrandStore/MMKV.framework"
   spec.exclude_files = 'Sources/GrandStore/MMKV.framework/Info.plist'
-  spec.resource = 'Sources/GrandRefresh/Resource/*'
+  # spec.resource = 'Sources/GrandRefresh/Resource/Refresh.bundle'
 
   # spec.public_header_files = "Classes/**/*.h"
 

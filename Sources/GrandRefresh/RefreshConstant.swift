@@ -18,7 +18,7 @@ class RefreshConstant {
 }
 
 public func RLocalize(_ string:String)->String{
-    return NSLocalizedString(string, tableName: "Localize", bundle: Bundle(for: DefaultRefreshHeader.self), value: "", comment: "")
+    return NSLocalizedString(string, tableName: "Localize", bundle:  Bundle(path: Bundle(for: DefaultRefreshHeader.self).path(forResource: "Refresh", ofType: "bundle")!)!, value: "", comment: "")
 }
 public struct RHeaderString{
     static public let pullDownToRefresh = RLocalize("pullDownToRefresh")

@@ -29,7 +29,8 @@ public class DefaultLoadMoreFooter: LoadMoreFooter, SubLoadMoreFooterProtocol {
         if let img = self.idleImage {
             pindicator.image = img
         } else {
-            pindicator.image = UIImage(named: "arrow_down", in: Bundle(for: LoadMoreFooter.self), compatibleWith: nil)
+            let bundle = Bundle(path: Bundle(for: LoadMoreFooter.self).path(forResource: "Refresh", ofType: "bundle")!)
+            pindicator.image = UIImage(contentsOfFile: (bundle?.path(forResource: "arrow_down@3x", ofType: "png"))!)?.withRenderingMode(.alwaysTemplate)
         }
         return pindicator
     }()
