@@ -8,10 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let t = GrandStore(name: "123", defaultValue: 123)
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 

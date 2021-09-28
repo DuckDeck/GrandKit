@@ -9,7 +9,7 @@
 import Foundation
 import MMKV
 
-class MMKVStore {
+enum MMKVStore {
     static var mmkv: MMKV = {
         MMKV.initialize()
         return MMKV.default()!
@@ -18,8 +18,8 @@ class MMKVStore {
 
 open class GrandStore<T> where T: Codable {
     fileprivate var name: String!
-    fileprivate var value: T?
-    fileprivate var defaultValue: T?
+    fileprivate var value: T!
+    fileprivate var defaultValue: T
     fileprivate var hasValue: Bool = false
     fileprivate var timeout: Int = 0
     fileprivate var isTemp = false // 只是放到内存里临时保存
@@ -58,45 +58,39 @@ open class GrandStore<T> where T: Codable {
             }
             if !hasValue {
                 if isTemp {
-                    if self.value == nil {
-                        self.value = defaultValue
-                        hasValue = true
-                    }
+                    hasValue = true
                 } else {
                     if storeLevel == 0 {
                         if store.object(forKey: name) == nil {
                             self.value = self.defaultValue
-                            store.set(self.value!, forKey: self.name)
+                            store.set(self.value, forKey: self.name)
                             store.synchronize()
                             hasValue = true
                         } else {
-                            self.value = store.object(forKey: self.name) as? T
+                            self.value = store.object(forKey: self.name) as? T ?? defaultValue
                             hasValue = true
                         }
                     }
                     if storeLevel == 1 {
                         if !MMKVStore.mmkv.contains(key: self.name) {
                             self.value = self.defaultValue
-                            if let d = self.value?.data {
+                            if let d = self.value.data {
                                 MMKVStore.mmkv.set(d, forKey: self.name)
                             } else {
                                 print("convert docable to data fail")
                             }
                             hasValue = true
                         } else {
-                            self.value = T.parse(d: MMKVStore.mmkv.data(forKey: self.name)!)
+                            self.value = T.parse(d: MMKVStore.mmkv.data(forKey: self.name)!)!
                             hasValue = true
                         }
                     }
                 }
             }
-            return self.value ?? defaultValue!
+            return self.value
         }
         set {
             if let call = self.observerBlock {
-                if self.value == nil {
-                    self.value = self.defaultValue
-                }
                 call(self, self.name, self.value as AnyObject, newValue as AnyObject)
             }
             self.value = newValue
@@ -104,7 +98,7 @@ open class GrandStore<T> where T: Codable {
                 hasValue = true
             } else {
                 if storeLevel == 0 {
-                    store.set(self.value!, forKey: self.name)
+                    store.set(self.value, forKey: self.name)
                     store.synchronize()
                     if timeoutDate != nil {
                         timeoutDate = Date(timeIntervalSinceNow: Double(self.timeout))
@@ -115,7 +109,7 @@ open class GrandStore<T> where T: Codable {
                         clear()
                         self.value = self.defaultValue
                     } else {
-                        if let d = self.value?.data {
+                        if let d = self.value.data {
                             MMKVStore.mmkv.set(d, forKey: self.name)
                         }
                         else {
@@ -208,7 +202,7 @@ open class GrandStore<T> where T: Codable {
     }
 
     fileprivate var storeLevel: Int {
-        if defaultValue! is NSNumber || defaultValue! is String || defaultValue! is Date || defaultValue! is Data {
+        if defaultValue is NSNumber || defaultValue is String || defaultValue is Date || defaultValue is Data {
             return 0
         }
         return 1

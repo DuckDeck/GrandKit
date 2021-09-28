@@ -89,10 +89,10 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  spec.source_files  = "Sources", "Sources/**/*"
-  spec.vendored_frameworks = "Sources/GrandStore/MMKV.framework"
-  spec.exclude_files = 'Sources/GrandStore/MMKV.framework/Info.plist'
+  spec.swift_version = "5.0"
+  spec.source_files  =  "Sources/**/*.{h,m,swift}"
+  spec.vendored_frameworks = "Sources/GrandStore/MMKV.xcframework"
+  spec.exclude_files = 'Sources/**/*.plist'
   # spec.resource = 'Sources/GrandRefresh/Resource/Refresh.bundle'
 
   # spec.public_header_files = "Classes/**/*.h"
