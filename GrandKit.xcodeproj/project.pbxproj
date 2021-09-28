@@ -42,8 +42,6 @@
 		AE1B2DB226EF343F00F8C5D9 /* TimeSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */; };
 		AE1B2DB526EF34B600F8C5D9 /* StarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */; };
 		AE1B2DB626EF34B600F8C5D9 /* StarReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */; };
-		AECA0C422702F16800F2F6DA /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */; };
-		AECA0C432702F16800F2F6DA /* MMKV.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AECA0C4F2702F9CC00F2F6DA /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C452702F9CC00F2F6DA /* MarkView.swift */; };
 		AECA0C502702F9CD00F2F6DA /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C452702F9CC00F2F6DA /* MarkView.swift */; };
 		AECA0C512702F9CD00F2F6DA /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C462702F9CC00F2F6DA /* DrawView.swift */; };
@@ -64,6 +62,9 @@
 		AECA0C602702F9CD00F2F6DA /* ViewNeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C4D2702F9CC00F2F6DA /* ViewNeat.swift */; };
 		AECA0C612702F9CD00F2F6DA /* ViewChaosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C4E2702F9CC00F2F6DA /* ViewChaosInfo.swift */; };
 		AECA0C622702F9CD00F2F6DA /* ViewChaosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C4E2702F9CC00F2F6DA /* ViewChaosInfo.swift */; };
+		AECA0C652702FD1B00F2F6DA /* GrandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GrandKit::GrandKit::Product" /* GrandKit.framework */; };
+		AECA0C662702FD1B00F2F6DA /* GrandKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "GrandKit::GrandKit::Product" /* GrandKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AECA0C6A2702FD3F00F2F6DA /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */; };
 		OBJ_28 /* GrandBaseTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* GrandBaseTable.swift */; };
 		OBJ_29 /* GrandCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* GrandCellTableViewCell.swift */; };
 		OBJ_30 /* GrandContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GrandContentViewController.swift */; };
@@ -91,26 +92,23 @@
 			remoteGlobalIDString = "GrandKit::GrandKitTests";
 			remoteInfo = GrandKitTests;
 		};
+		AECA0C672702FD1B00F2F6DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "GrandKit::GrandKit";
+			remoteInfo = GrandKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AE1B2DB926F0324F00F8C5D9 /* Embed Frameworks */ = {
+		AECA0C692702FD1B00F2F6DA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE1B2DBC26F0326900F8C5D9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				AECA0C432702F16800F2F6DA /* MMKV.xcframework in Embed Frameworks */,
+				AECA0C662702FD1B00F2F6DA /* GrandKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECA0C422702F16800F2F6DA /* MMKV.xcframework in Frameworks */,
+				AECA0C652702FD1B00F2F6DA /* GrandKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				AECA0C6A2702FD3F00F2F6DA /* MMKV.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +321,12 @@
 				AE1B2D2726EF30AC00F8C5D9 /* Sources */,
 				AE1B2D2826EF30AC00F8C5D9 /* Frameworks */,
 				AE1B2D2926EF30AC00F8C5D9 /* Resources */,
-				AE1B2DBC26F0326900F8C5D9 /* Embed Frameworks */,
+				AECA0C692702FD1B00F2F6DA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AECA0C682702FD1B00F2F6DA /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -339,7 +339,6 @@
 			buildPhases = (
 				OBJ_27 /* Sources */,
 				OBJ_35 /* Frameworks */,
-				AE1B2DB926F0324F00F8C5D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -513,6 +512,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AECA0C682702FD1B00F2F6DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "GrandKit::GrandKit" /* GrandKit */;
+			targetProxy = AECA0C672702FD1B00F2F6DA /* PBXContainerItemProxy */;
+		};
 		OBJ_46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "GrandKit::GrandKitTests" /* GrandKitTests */;
