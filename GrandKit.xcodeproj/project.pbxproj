@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -84,7 +84,6 @@
 		AECA0C622702F9CD00F2F6DA /* ViewChaosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA0C4E2702F9CC00F2F6DA /* ViewChaosInfo.swift */; };
 		AECA0C652702FD1B00F2F6DA /* GrandKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GrandKit::GrandKit::Product" /* GrandKit.framework */; };
 		AECA0C662702FD1B00F2F6DA /* GrandKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "GrandKit::GrandKit::Product" /* GrandKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AECA0C6A2702FD3F00F2F6DA /* MMKV.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */; };
 		OBJ_28 /* GrandBaseTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* GrandBaseTable.swift */; };
 		OBJ_29 /* GrandCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* GrandCellTableViewCell.swift */; };
 		OBJ_30 /* GrandContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* GrandContentViewController.swift */; };
@@ -122,6 +121,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AE50EE2F272432060066210B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AECA0C692702FD1B00F2F6DA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,7 +157,6 @@
 		AE1B2DAC26EF343F00F8C5D9 /* TimeSpan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSpan.swift; sourceTree = "<group>"; };
 		AE1B2DB426EF34B600F8C5D9 /* StarReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarReview.swift; sourceTree = "<group>"; };
 		AE1B2DC626F078BB00F8C5D9 /* MMKV.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MMKV.xcframework; path = ../../xc/MMKV.xcframework; sourceTree = "<group>"; };
-		AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MMKV.xcframework; sourceTree = "<group>"; };
 		AE7E73F52722502300F0C19C /* LoadMoreFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreFooter.swift; sourceTree = "<group>"; };
 		AE7E73F62722502300F0C19C /* RefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeader.swift; sourceTree = "<group>"; };
 		AE7E73F72722502300F0C19C /* DefaultLoadMoreFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLoadMoreFooter.swift; sourceTree = "<group>"; };
@@ -200,7 +208,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				AECA0C6A2702FD3F00F2F6DA /* MMKV.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +237,6 @@
 		AE1B2D7426EF329500F8C5D9 /* GrandStore */ = {
 			isa = PBXGroup;
 			children = (
-				AE1B2DC926F0797500F8C5D9 /* MMKV.xcframework */,
 				AE1B2D7526EF32AE00F8C5D9 /* GrandStore.swift */,
 			);
 			path = GrandStore;
@@ -401,6 +407,7 @@
 			buildPhases = (
 				OBJ_27 /* Sources */,
 				OBJ_35 /* Frameworks */,
+				AE50EE2F272432060066210B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -690,10 +697,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.Demo;
@@ -759,10 +763,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.Demo;
@@ -789,10 +790,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = GrandKit.xcodeproj/GrandKit_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -823,10 +821,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = GrandKit.xcodeproj/GrandKit_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -966,8 +961,7 @@
 				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -997,11 +991,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = GrandKit.xcodeproj/GrandKitTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@loader_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1027,11 +1017,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = GrandKit.xcodeproj/GrandKitTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@loader_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";

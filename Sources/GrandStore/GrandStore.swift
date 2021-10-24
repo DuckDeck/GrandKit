@@ -7,14 +7,8 @@
 //
 
 import Foundation
-import MMKV
 
-enum MMKVStore {
-    static var mmkv: MMKV = {
-        MMKV.initialize()
-        return MMKV.default()!
-    }()
-}
+
 
 open class GrandStore<T> where T: Codable {
     fileprivate var name: String!
@@ -22,7 +16,7 @@ open class GrandStore<T> where T: Codable {
     fileprivate var defaultValue: T
     fileprivate var hasValue: Bool = false
     fileprivate var timeout: Int = 0
-    fileprivate var isTemp = false // 只是放到内存里临时保存
+    fileprivate var isTemp = false
     fileprivate var timeoutDate: Date?
     fileprivate var observerBlock: ((_ observerObject: AnyObject, _ observerKey: String, _ oldValue: AnyObject, _ newValue: AnyObject) -> Void)?
     fileprivate var desc = ""
@@ -72,16 +66,17 @@ open class GrandStore<T> where T: Codable {
                         }
                     }
                     if storeLevel == 1 {
-                        if !MMKVStore.mmkv.contains(key: self.name) {
+                        if store.data(forKey: self.name) == nil {
                             self.value = self.defaultValue
                             if let d = self.value.data {
-                                MMKVStore.mmkv.set(d, forKey: self.name)
+                                store.setValue(d, forKey: self.name)
+                                store.synchronize()
                             } else {
-                                print("convert docable to data fail")
+                                print("convert decoble to data fail")
                             }
                             hasValue = true
                         } else {
-                            self.value = T.parse(d: MMKVStore.mmkv.data(forKey: self.name)!)!
+                            self.value = T.parse(d: store.data(forKey: self.name)!)!
                             hasValue = true
                         }
                     }
@@ -110,10 +105,11 @@ open class GrandStore<T> where T: Codable {
                         self.value = self.defaultValue
                     } else {
                         if let d = self.value.data {
-                            MMKVStore.mmkv.set(d, forKey: self.name)
+                            store.set(d, forKey: self.name)
+                            store.synchronize()
                         }
                         else {
-                            print("convert docable to data fail")
+                            print("convert encodable to data fail")
                         }
                     }
                 }
@@ -189,7 +185,6 @@ open class GrandStore<T> where T: Codable {
             call(self, name, value as AnyObject, defaultValue as AnyObject)
         }
         store.removeObject(forKey: name)
-        MMKVStore.mmkv.removeValue(forKey: name)
         hasValue = false
     }
     
@@ -217,11 +212,7 @@ class GrandStoreSetting {
     class func clearAll() {
         let userDefault = UserDefaults.standard
         for item in shared.enumerated() {
-            if item.element.value == 0 {
-                userDefault.removeObject(forKey: item.element.key)
-            } else {
-                MMKVStore.mmkv.removeValue(forKey: item.element.key)
-            }
+            userDefault.removeObject(forKey: item.element.key)
         }
     }
     
@@ -233,12 +224,7 @@ class GrandStoreSetting {
         let userDefault = UserDefaults.standard
         for item in shared.enumerated() {
             if names == item.element.key {
-                if item.element.value == 0 {
-                    userDefault.removeObject(forKey: item.element.key)
-                } else {
-                    MMKVStore.mmkv.removeValue(forKey: item.element.key)
-                }
-                break
+                userDefault.removeObject(forKey: item.element.key)
             }
         }
     }
@@ -247,11 +233,7 @@ class GrandStoreSetting {
         let userDefault = UserDefaults.standard
         for item in shared.enumerated() {
             if names.contains(item.element.key) {
-                if item.element.value == 0 {
-                    userDefault.removeObject(forKey: item.element.key)
-                } else {
-                    MMKVStore.mmkv.removeValue(forKey: item.element.key)
-                }
+                userDefault.removeObject(forKey: item.element.key)
             }
         }
     }
